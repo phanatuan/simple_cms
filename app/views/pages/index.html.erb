@@ -1,0 +1,46 @@
+<% page_title = 'New Page' %> 
+
+<%= link_to 'Back to subject', controller: 'subjects', action: 'index' %> 
+<%= link_to 'Create a new page', action: 'new', subject_id: @subject.id %>
+
+<h1>This is the Index Pages site</h1>
+
+<table class='table table-striped table-bordered table-condensed table-hover'>
+	<thead>
+		<tr>
+			<th>Subject Name</th>
+			<th>Pages Name</th>
+			<!-- <th>Permalink</th> -->
+			<th>Position</th>
+			<th>Visible</th>
+			<th>Permalink</th>
+			<th>Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<% @pages.each do |page| %> 
+	<tbody>
+		<tr> 
+			<td><%= @subject.name %>  </td> 
+			<td><%= page.name %></td>
+			<!-- <td><%= page.permalink %></td> -->
+			<td><%= page.position %></td>
+			<td><%= page.visible ? "Yes" : "No"  %> </td>
+			<td><%= page.permalink %></td>
+			<td><%= page.created_at %> </td>
+			<td>
+				<%= link_to 'View Sections | ', {controller: 'sections', action: 'index', id: page.id, page_id: page.id} %>
+				<%= link_to 'Edit | ', {action: 'edit', id: page.id, subject_id: @subject.id} %>
+				<%= link_to 'Show | ', {action: 'show', id: page.id, subject_id: @subject.id} %>
+				<%= link_to 'Delete', {action: 'delete', id: page.id, subject_id: @subject.id} %>
+
+			</td>
+		</tr>
+	</tbody>
+	<% end %> 	
+</table>
+
+
+
+
+

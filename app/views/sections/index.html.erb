@@ -1,0 +1,36 @@
+<%=link_to "Back to the current pages | ", controller: 'Pages', action:'index', id: @page.id, subject_id: @page.subject_id %> 
+<%=link_to "Create a new section", action:'new', page_id: @page.id  %> 
+
+<h1>This is a Section Index one</h1>
+
+<table class='table table-striped table-bordered table-condensed table-hover'>
+	<thead>
+	<tr>
+		<th>Page ID</th>
+		<th>Name</th>
+		<th>Position</th>
+		<th>Visible</th>
+		<th>Content Type</th>
+		<th>Content</th>
+		<th>Action</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @sections.each do |section| %> 
+	<tr>
+		<th><%= section.page.name %></th>
+		<th><%= section.name %></th>
+		<th><%= section.position %></th>
+		<th><%= section.visible %></th>
+		<th><%= section.content_type%></th>
+		<th><%= section.content %></th>
+		<th> 
+			<%= link_to "Show | ", {action: 'show', id: section.id, page_id: @page.id} %>
+			<%= link_to "Edit | ", {action: 'edit', id: section.id, page_id: @page.id} %>
+			<%= link_to "Delete", {action: 'delete', id: section.id, page_id: @page.id} %>
+		</th>
+	</tr>
+	<% end %>
+	</tbody> 
+</table>

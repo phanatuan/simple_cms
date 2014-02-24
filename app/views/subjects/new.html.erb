@@ -1,0 +1,20 @@
+
+
+<%= link_to 'Back to Index', action: 'index' %>
+
+
+<div class='panel panel-default'>
+	<div class='panel-heading'>
+		<h1>Add new subject</h1>
+	</div>
+	<div class='panel-body'>
+		<%= form_for @subject, url: {action: 'create'} do |f| %> 
+		<%= render(:partial => 'form', :locals => {:f => f}) %> 
+		<div class="actions">
+	    <%= f.submit 'Add New Subject', class: 'btn btn-primary'%>
+	  </div>
+	</div>
+	<% end %>
+</div>
+
+

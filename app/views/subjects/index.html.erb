@@ -1,0 +1,36 @@
+<% @page_title = 'Subjects' %>
+
+<div class='subjects index'>
+	<h2>Subjects</h2>
+
+	<%= link_to 'Add New Subject', {action: 'new'}, class: 'action new' %> </br> 
+	<%= pluralize(@subjects.count,'subject') +  ' found' %> 
+	<table class='table table-striped table-bordered table-condensed table-hover' summary="Subject List">
+		<thead>
+			<tr>
+				<th>Position</th>
+				<th>Subject</th>
+				<th>Visible</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tbody>	
+		<% @subjects.each do |subject| %>
+			<tr>
+				<td><%= subject.position %></td>
+				<td><%= subject.name %></td>
+				<td><%= subject.visible ? 'Yes' : 'No' %></td>
+				<td>
+					<%= link_to "View Pages | ", {controller: 'pages', subject_id: subject.id} %>
+					<%= link_to "Show | ", {action: 'show', id: subject.id} %>
+					<%= link_to "Edit | ", {action: 'edit', id: subject.id} %>
+					<%= link_to "Delete", {action: 'delete', id: subject.id} %>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+
+
+</div>	

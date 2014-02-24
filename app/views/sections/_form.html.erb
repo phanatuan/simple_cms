@@ -1,0 +1,27 @@
+	<%= error_messages_for(@section) %>
+	<div class='form-group'>
+		<%= f.label :page_id, "Pages" %> 
+		<%= f.select :page_id, @pages.map{|p| [p.name, p.id] }, class:'form-control'%>
+	</div>
+	<div class: 'form-group'>
+		<%= f.label :name %>
+		<%= f.text_field :name, class:'form-control' %>
+	</div>
+	<div class='form-group'>
+		<%= f.label :position %>
+		<%= f.text_field :position, class:'form-control' %>
+	</div>
+	
+	<div class='form-group'>
+		<%= f.label :visible %>
+		<%= f.check_box :visible, class:'checkbox-inline'  %>
+	</div>
+	<div class='form-group'>
+		<%= f.label :content_type %>
+		<%= f.radio_button :content_type, 'text', class:'radio-inline' %>  Text
+		<%= f.radio_button :content_type, 'HTML', class:'radio-inline' %>  HTML
+	</div>
+	<div class='form-group'>
+		<%= f.label :content %>
+		<%= f.text_area :content, size: '40x10', class:'form-control' %>
+	</div>

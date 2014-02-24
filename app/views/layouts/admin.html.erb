@@ -1,0 +1,29 @@
+<!DOCTYPE html > 
+<html>
+	<head>
+		
+		<%= render partial: 'layouts/stylesheet_tag' %>
+	</head>
+	<body>
+		<div class="header">
+			<h1>Simple CMS Admin</h1>
+		</div>
+		<div class="main">
+			<% if !flash[:notice].blank? %>
+				<div class = 'notice'>
+					<%= flash[:notice] %>
+				</div>
+			<% end %>
+		<div class="content">
+				<%= yield %>
+		</div>
+
+		</div>
+
+		<div class="footer">
+			<p id="copyright">&copy; lynda.com / Phan Anh Tuan</p>
+		</div>
+
+		
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<% page_title = 'Edit the Section' %> 
+<%= link_to 'Section Index', action: 'index', page_id: @page.id %> 
+<h1>This is to EDIT a new section</h1>
+<div class='panel panel-default'>
+	<div class='panel-heading'>
+		<h1>Edit the section</h1>
+	</div>
+	<div class='panel-body'>
+		<%= form_for @section, url: {action: 'update', id: @section.id, page_id: @page.id} do |f| %> 
+		<%= render(:partial => 'form', :locals => {:f => f}) %>
+		<div>
+			<%= f.submit "Update the Current Section", class: 'btn btn-danger' %> 
+		</div>
+	</div>
+	<% end %> 
+</div>

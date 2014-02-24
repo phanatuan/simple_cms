@@ -1,0 +1,16 @@
+<%= link_to 'Back to Index', action: 'index' %>
+
+
+<div class='panel panel-default'>
+	<div class='panel-heading'>
+		<h1>Edit new subject</h1>
+	</div>
+	<div class='panel-body'>
+		<%= form_for @subject, url: {action: 'update', id: @subject.id} do |f| %> 
+		<%= render(:partial => 'form', :locals => {:f => f}) %>
+		<div>
+	    <%= f.submit 'Add New Subject', class: 'btn btn-primary'%>
+	  </div>
+	</div> <!-- End of Panel Body -->
+	<% end %>
+</div>

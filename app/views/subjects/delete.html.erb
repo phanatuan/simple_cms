@@ -1,0 +1,22 @@
+<%= link_to 'Back to Index', action: 'index' %>
+
+
+<h1>Delete Page</h1>
+<%= form_for @subject, url: {action: 'destroy', id: @subject.id} do |f| %> 
+	<p>Are you sure you want to delete this subject?</p>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field (:name) %>
+	</div>
+	<div>
+		<%= f.label :position %>
+	  <%= f.text_field (:position) %>
+	</div>
+	<div>
+		<%= f.label :visible %>
+		<%= f.text_field (:visible) %>
+	</div>
+	<div class="actions">
+    <%= f.submit class: 'btn btn-primary'%>
+  </div>
+<% end %>

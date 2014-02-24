@@ -1,0 +1,22 @@
+<% page_title = 'Delete the pages' %> 
+<%= link_to 'Back to Index', action: 'index', subject_id: @subject.id %>
+
+<h1>Delete Page</h1>
+<%= form_for @page, url: {action: 'destroy', id: @page.id, subject_id: @subject.id} do |f| %> 
+<p>Are you sure you want to delete this page?</p>
+<div>
+	<%= f.label :name %>
+	<%= f.text_field (:name) %>
+</div>
+<div>
+	<%= f.label :position %>
+	<%= f.text_field (:position) %>
+</div>
+<div>
+	<%= f.label :visible %>
+	<%= f.text_field (:visible) %>
+</div>
+<div class="actions">
+	<%= f.submit "Delete Page", class: 'btn btn-primary'%>
+</div>
+<% end %>

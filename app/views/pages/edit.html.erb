@@ -1,0 +1,13 @@
+<% @page_title = 'Edit the Page' %> 
+<%= link_to 'The Index Page', action: 'index', subject_id: @subject.id %> 
+
+<h1>This is an Edit Page </h1> 
+
+<%= form_for @page, url: {action: 'update', id: @page.id, subject_id: @subject.id} do |f| %> 
+<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+<div class='action'> 
+	<%= f.submit 'Edit the page', class: 'btn btn-success'  %> 
+</div>
+<% end %> 
+

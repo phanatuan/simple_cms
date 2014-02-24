@@ -1,0 +1,53 @@
+<% 
+text = "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. \n\n Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. hello nibh. sample quam. In sample text sem at dolor. Maecenas mattis. Sed convallis tristique sem. \n\n Proin ut ligula text nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus tuan, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. " 
+%>
+
+<h2>word_wrap</h2>
+<%= word_wrap(text, :line_width => 30) %> 
+<hr/> 
+
+<h2>simple_fortmat</h2>
+<hr/> 
+
+<h2>simple_format + word_wrap</h2>
+<%= simple_format(word_wrap(text, :line_width => 30)) %>
+<hr/>
+
+<h2>truncate</h2>
+<%= truncate(text, :length => 40, :omission => '...')%>
+<hr/>
+
+<h2>excerpt</h2>
+<%= excerpt(text, 'hello', :radius => 10, :omission => '...') %>
+<hr/>
+
+<h2>highlight</h2>
+<%= highlight(text, 'sample text') %> 
+<hr/> 
+<%= highlight(text, ['sample', 'tuan'], :highlighter => '<em>\1</em>') %> 
+
+<h2>pluralize</h2>
+<%= 'student'.pluralize %>
+<%= 'ox'.pluralize %>
+</br> 
+<%= pluralize(2, 'product') %> </br> 
+</br>
+<% [0,1,20].each do |n| %> 
+	<%= pluralize(n,'product') %> </br> 
+	<%= pluralize(n,'octopus') %> </br> 
+	<%= pluralize(n,'snipe','snope') %> </br> 
+<% end %> 
+<hr/> 
+
+<h2>cycle</h2>
+<% 5.times do %> 
+	<%= cycle('red','green','blue') %> </br>
+<% end %> 
+
+
+
+
+
+
+
+

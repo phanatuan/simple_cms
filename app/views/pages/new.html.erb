@@ -1,0 +1,16 @@
+<% @page_title = 'New Page' %> 
+<%= link_to 'Index Page', action: 'index', subject_id: @subject.id %> 
+
+<div class='panel panel-default'>
+	<div class='panel-heading'>
+		<h1>Add new page</h1>
+	</div>
+	<div class='panel-body'>
+		<%= form_for @page, url: {action: 'create', subject_id: @subject.id, page_id: @page.id} do |f| %> 
+		<%= render(:partial => 'form', :locals => {:f => f}) %> 
+		<div class="actions">
+			<%= f.submit 'Create A New Page', class: 'btn btn-primary'%>
+		</div>
+	</div>
+	<% end %> 
+</div>

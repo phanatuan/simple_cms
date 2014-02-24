@@ -1,0 +1,17 @@
+	<%= error_messages_for(@subject) %>
+	<div class='form-group'>
+		<%= f.label :name %>
+		<%= f.text_field (:name), class: 'form-control' %>
+	</div>
+	<div class='form-group'>
+		<%= f.label :position %>
+	  <%= f.select :position, 1..@subject_count, class: 'form-control'%>
+	</div>
+	<div class='form-group'>
+		<%= f.label :visible %>
+		<%= f.check_box (:visible), class: 'form-control' %>
+	</div>
+		
+
+
+	

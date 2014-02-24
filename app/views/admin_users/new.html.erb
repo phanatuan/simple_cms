@@ -1,0 +1,7 @@
+<% @page_title = 'Create a new AdminUser' %> 
+
+<%= form_for @admin_user, url: {action: 'create'} do |f| %>
+<%= render partial: 'form', locals: {:f => f} %> 
+<%= f.submit "Create new Admin User", class: 'btn btn-primary' %>
+
+<% end %> 

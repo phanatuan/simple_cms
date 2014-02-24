@@ -1,0 +1,14 @@
+<%= link_to "Show", action: 'index', page_id: @page.id %>
+
+<h1>This is the show page</h1>
+
+<div class='panel panel-default'>
+	<div class='panel-heading'>
+		<h1>Edit the section</h1>
+	</div>
+	<div class='panel-body'>
+		<%= form_for @section, url: {action: 'create', id: @section.id, page_id: @page.id} do |f| %> 
+		<%= render partial: 'form', locals: {f: f} %> 
+	</div>
+	<% end %> 
+</div>
